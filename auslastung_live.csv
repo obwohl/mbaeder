@@ -1,0 +1,17 @@
+Timestamp,Organization_ID,Location_Name,Type,Person_Count,Max_Person_Count,Utilization_Percentage
+2026-04-12 16:43:12,30195,Bad Giesing-Harlaching,swim,0,311,0.0
+2026-04-12 16:43:12,30190,Cosimawellenbad,swim,177,530,33.4
+2026-04-12 16:43:12,129,Dante-Winter-Warmfreibad,swim,119,500,23.8
+2026-04-12 16:43:12,30208,Michaelibad,swim,360,570,63.2
+2026-04-12 16:43:12,30197,Müller’sches Volksbad,swim,42,177,23.7
+2026-04-12 16:43:12,30184,Nordbad,swim,218,432,50.5
+2026-04-12 16:43:12,30182,Olympia-Schwimmhalle,swim,263,959,27.4
+2026-04-12 16:43:12,30187,Südbad,swim,137,314,43.6
+2026-04-12 16:43:12,30199,Westbad,swim,339,872,38.9
+2026-04-12 16:43:12,30191,Cosimawellenbad,sauna,29,170,17.1
+2026-04-12 16:43:12,30200,Dantebad,sauna,62,150,41.3
+2026-04-12 16:43:12,30203,Michaelibad,sauna,30,150,20.0
+2026-04-12 16:43:12,30204,Müller’sches Volksbad,sauna,50,70,71.4
+2026-04-12 16:43:12,30185,Nordbad,sauna,40,146,27.4
+2026-04-12 16:43:12,30188,Südbad,sauna,28,100,28.0
+2026-04-12 16:43:12,30207,Westbad,sauna,19,60,31.7
