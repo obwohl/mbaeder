@@ -2,7 +2,7 @@ import urllib.request
 import json
 import csv
 import re
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import os
 
 def get_auslastung():
@@ -40,8 +40,20 @@ def get_auslastung():
         print(f"Error fetching API: {e}")
         return
 
-    # 3. Write to CSV
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    # 3. Process and write to CSV
+    now = datetime.now(timezone.utc)
+    # Round to nearest 15 minutes
+    # We add 7.5 minutes and then floor to the nearest 15 minutes to do rounding.
+    discard = timedelta(minutes=now.minute % 15,
+                        seconds=now.second,
+                        microseconds=now.microsecond)
+    now -= discard
+    if discard >= timedelta(minutes=7, seconds=30):
+        now += timedelta(minutes=15)
+
+    timestamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
     csv_filename = "auslastung_live.csv"
 
     # Check if we should write headers
@@ -50,19 +62,33 @@ def get_auslastung():
     with open(csv_filename, 'a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         if write_header:
-            writer.writerow(['timestamp', 'item_id', 'organization_id', 'location_name', 'type', 'person_count', 'max_person_count', 'utilization_percentage'])
+            writer.writerow(['timestamp', 'item_id', 'person_count', 'max_person_count', 'utilization_percentage'])
 
         for item in data:
             org_id = str(item.get('organizationUnitId'))
             p_count = item.get('personCount')
             m_count = item.get('maxPersonCount')
-            loc = locations.get(org_id, {'name': 'Unknown', 'type': 'Unknown'})
 
-            utilization = round((p_count / m_count) * 100, 1) if m_count and m_count > 0 else 0
+            # Sanity checks
+            if not isinstance(p_count, (int, float)) or p_count < 0:
+                continue
+            if not isinstance(m_count, (int, float)) or m_count <= 0:
+                continue
+
+            # Ensure p_count doesn't significantly exceed m_count due to backend errors (allow small overflow)
+            if p_count > m_count * 1.5:
+                continue
+
+            loc = locations.get(org_id, {'name': 'Unknown', 'type': 'Unknown'})
+            if loc['name'] == 'Unknown':
+                continue
+
+            utilization = round((p_count / m_count) * 100, 1)
+            if utilization > 150:
+                continue # another sanity check for extreme overflow
 
             item_id = f"{loc['name']}_{loc['type']}".replace(' ', '_').lower()
-            writer.writerow([timestamp, item_id, org_id, loc['name'], loc['type'], p_count, m_count, utilization])
-
+            writer.writerow([timestamp, item_id, p_count, m_count, utilization])
     print(f"Successfully wrote {len(data)} records to {csv_filename}")
 
 if __name__ == "__main__":
