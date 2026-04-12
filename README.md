@@ -29,6 +29,8 @@ Once you push this code to a repository on GitHub:
 2. It will automatically commit the updated `auslastung_live.csv` file back to your repository.
 3. Over days, weeks, and months, you will build up a rich, historical CSV file of the "Auslastung" data automatically, without needing to rent a server!
 
+**Note:** Ensure your GitHub repository settings allow Actions to read and write to the repository (Settings -> Actions -> General -> Workflow permissions -> Read and write permissions).
+
 ## Native Chronos-2 Multivariate Forecasting Compatibility
 The exported CSV (`auslastung_live.csv`) is specifically structured to be directly compatible with **Amazon's Chronos-2** foundation model for multivariate time series forecasting.
 
@@ -36,32 +38,19 @@ It provides a lean, long-format DataFrame with the two exact index columns requi
 1. `item_id`: A unique identifier for each time series (e.g., `südbad_swim`, `südbad_sauna`).
 2. `timestamp`: The timestamp of the observation, strictly aligned to 15-minute UTC boundaries.
 
-### Future Forecasting via Serverless API (No Hardware Needed)
-If you do not have a powerful GPU or server, you can deploy and query `amazon/chronos-2` using **Hugging Face Serverless Inference Endpoints**.
+### Future Forecasting for Free (via GitHub Actions)
+Because the `amazon/chronos-2` model is surprisingly small for a foundation model (only 120M parameters), **it can actually run completely free directly on a standard CPU GitHub Actions runner**!
 
-- The exact URL endpoint to hit is: `https://api-inference.huggingface.co/models/amazon/chronos-2`
-- Serverless endpoints scale to zero, meaning **you only pay for the exact seconds the API processes your request** (run on-demand) with absolutely no idle costs.
+This repository includes an on-demand forecasting workflow (`.github/workflows/forecast.yml`) which runs the included `example_forecast.py` script.
 
-I have provided a completely concrete, working Python script: `example_forecast.py` which demonstrates exactly how to query this endpoint with the CSV data.
+**To run a multivariate forecast for free:**
+1. Navigate to the **Actions** tab in your GitHub repository.
+2. Select **Run Chronos-2 Forecast** on the left.
+3. Click the **Run workflow** dropdown on the right side.
+4. GitHub Actions will boot up a runner, download the model, ingest your historical `auslastung_live.csv`, run a 6-hour multivariate forecast for all pools simultaneously, and commit a new `forecast_results.csv` file back into your repository!
 
-**Run the example:**
+If you wish to run it locally on your own machine instead, simply install the required packages and execute the same script:
 ```bash
-pip install pandas
-HUGGINGFACE_TOKEN=your_token_here python3 example_forecast.py
-```
-
-Under the hood, `example_forecast.py` reads `auslastung_live.csv`, parses the data into a JSON payload of historical arrays, and queries the URL endpoint. This is exactly the payload format the Serverless API expects for multivariate forecasting:
-```json
-{
-  "inputs": {
-      "target": [
-          [10, 15, 20, 25, 30, 25, 20],  // person_count history
-          [10.0, 15.0, 20.0, 25.0, 30.0] // utilization_percentage history
-      ]
-  },
-  "parameters": {
-      "prediction_length": 24, // Forecast 6 hours into the future
-      "quantile_levels": [0.1, 0.5, 0.9]
-  }
-}
+pip install pandas "chronos-forecasting>=2.0"
+python3 example_forecast.py
 ```
