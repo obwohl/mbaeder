@@ -50,7 +50,7 @@ def get_auslastung():
     with open(csv_filename, 'a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         if write_header:
-            writer.writerow(['Timestamp', 'Organization_ID', 'Location_Name', 'Type', 'Person_Count', 'Max_Person_Count', 'Utilization_Percentage'])
+            writer.writerow(['timestamp', 'item_id', 'organization_id', 'location_name', 'type', 'person_count', 'max_person_count', 'utilization_percentage'])
 
         for item in data:
             org_id = str(item.get('organizationUnitId'))
@@ -60,7 +60,8 @@ def get_auslastung():
 
             utilization = round((p_count / m_count) * 100, 1) if m_count and m_count > 0 else 0
 
-            writer.writerow([timestamp, org_id, loc['name'], loc['type'], p_count, m_count, utilization])
+            item_id = f"{loc['name']}_{loc['type']}".replace(' ', '_').lower()
+            writer.writerow([timestamp, item_id, org_id, loc['name'], loc['type'], p_count, m_count, utilization])
 
     print(f"Successfully wrote {len(data)} records to {csv_filename}")
 

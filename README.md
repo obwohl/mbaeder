@@ -28,3 +28,11 @@ Once you push this code to a repository on GitHub:
 3. Over days, weeks, and months, you will build up a rich, historical CSV file of the "Auslastung" data automatically, without needing to rent a server!
 
 **Note:** Ensure your GitHub repository settings allow Actions to read and write to the repository (Settings -> Actions -> General -> Workflow permissions -> Read and write permissions).
+
+## AutoGluon TimeSeries Compatibility (Chronos-2)
+The exported CSV (`auslastung_live.csv`) is specifically structured to be directly compatible with **AutoGluon's TimeSeriesDataFrame**.
+It includes the two required index columns natively:
+1. `item_id`: A unique identifier for each time series (e.g., `südbad_swim`, `südbad_sauna`).
+2. `timestamp`: The timestamp of the observation.
+
+This makes it extremely easy to drop this CSV into AutoGluon for powerful multivariate forecasting using foundation models like **Chronos-2** in the future, once enough historical data has been collected.
