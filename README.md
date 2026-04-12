@@ -5,7 +5,9 @@ This script fetches the live utilization data (Auslastung) for Munich public swi
 ## How it works
 1. It parses `https://www.swm.de/baeder/auslastung` to find all facility IDs and names.
 2. It calls the backend API at `https://counter.ticos-systems.cloud/api/gates/counter` with these IDs.
-3. It appends the fetched live data to `auslastung_live.csv`.
+3. It validates the data (sanity checks for boundaries/division by zero).
+4. It aligns the current execution time to the nearest 15-minute interval in UTC (`Z`).
+5. It appends the fetched live data to `auslastung_live.csv`.
 
 ## Setup and Usage
 Run the python script locally:
@@ -29,10 +31,11 @@ Once you push this code to a repository on GitHub:
 
 **Note:** Ensure your GitHub repository settings allow Actions to read and write to the repository (Settings -> Actions -> General -> Workflow permissions -> Read and write permissions).
 
-## AutoGluon TimeSeries Compatibility (Chronos-2)
-The exported CSV (`auslastung_live.csv`) is specifically structured to be directly compatible with **AutoGluon's TimeSeriesDataFrame**.
-It includes the two required index columns natively:
-1. `item_id`: A unique identifier for each time series (e.g., `südbad_swim`, `südbad_sauna`).
-2. `timestamp`: The timestamp of the observation.
+## Native Chronos-2 Multivariate Forecasting Compatibility
+The exported CSV (`auslastung_live.csv`) is specifically structured to be directly compatible with **Amazon's Chronos-2** foundation model for multivariate time series forecasting.
 
-This makes it extremely easy to drop this CSV into AutoGluon for powerful multivariate forecasting using foundation models like **Chronos-2** in the future, once enough historical data has been collected.
+It provides a lean, long-format DataFrame with the two exact index columns required by `Chronos2Pipeline.predict_df()`:
+1. `item_id`: A unique identifier for each time series (e.g., `südbad_swim`, `südbad_sauna`).
+2. `timestamp`: The timestamp of the observation, strictly aligned to 15-minute UTC boundaries.
+
+This makes it extremely easy to load this CSV into Pandas and drop it directly into a native Chronos-2 forecasting pipeline in the future once enough historical data has been collected.

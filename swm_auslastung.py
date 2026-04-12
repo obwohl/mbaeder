@@ -41,18 +41,17 @@ def get_auslastung():
         return
 
 
+
     # 3. Process and write to CSV
     now = datetime.now(timezone.utc)
-    # Round to nearest 15 minutes
-    # We add 7.5 minutes and then floor to the nearest 15 minutes to do rounding.
+    # Strict floor to the previous 15-minute mark to ensure consecutive cron jobs never duplicate a timestamp
     discard = timedelta(minutes=now.minute % 15,
                         seconds=now.second,
                         microseconds=now.microsecond)
     now -= discard
-    if discard >= timedelta(minutes=7, seconds=30):
-        now += timedelta(minutes=15)
 
     timestamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+
 
     csv_filename = "auslastung_live.csv"
 
