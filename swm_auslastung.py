@@ -45,7 +45,7 @@ def get_auslastung():
     # 3. Process and write to CSV
     now = datetime.now(timezone.utc)
     # Round to the nearest 30-minute mark to handle slightly early or late cron executions
-    now_plus = now + timedelta(minutes=5)
+    now_plus = now + timedelta(minutes=15)
     discard = timedelta(minutes=now_plus.minute % 30,
                         seconds=now_plus.second,
                         microseconds=now_plus.microsecond)
