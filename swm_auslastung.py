@@ -44,11 +44,12 @@ def get_auslastung():
 
     # 3. Process and write to CSV
     now = datetime.now(timezone.utc)
-    # Strict floor to the previous 15-minute mark to ensure consecutive cron jobs never duplicate a timestamp
-    discard = timedelta(minutes=now.minute % 15,
-                        seconds=now.second,
-                        microseconds=now.microsecond)
-    now -= discard
+    # Round to the nearest 15-minute mark to handle slightly early or late cron executions
+    now_plus = now + timedelta(minutes=7, seconds=30)
+    discard = timedelta(minutes=now_plus.minute % 15,
+                        seconds=now_plus.second,
+                        microseconds=now_plus.microsecond)
+    now = now_plus - discard
 
     timestamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
