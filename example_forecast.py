@@ -24,16 +24,16 @@ def run_local_forecast():
         print("In a real scenario, please wait until the scraper has collected several days of data.")
 
     try:
-        from chronos import Chronos2Pipeline
+        from chronos import ChronosPipeline
     except ImportError:
         print("Error: chronos is not installed in this environment.")
         print("Please run: pip install 'chronos-forecasting>=2.0'")
         sys.exit(1)
 
-    print("Loading amazon/chronos-2 model...")
+    print("Loading amazon/chronos-t5-small model...")
     print("This will download the ~400MB model to the runner if not cached.")
     # Use CPU by default so it runs on GitHub Actions
-    pipeline = Chronos2Pipeline.from_pretrained("amazon/chronos-2", device_map="cpu")
+    pipeline = ChronosPipeline.from_pretrained("amazon/chronos-t5-small", device_map="cpu")
 
     # Predict the next 24 timesteps (24 * 15 minutes = 6 hours)
     # Target columns: person_count and utilization_percentage

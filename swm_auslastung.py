@@ -53,7 +53,18 @@ def get_auslastung():
     timestamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+
     csv_filename = "auslastung_live.csv"
+
+    # Read existing timestamps and items to prevent duplicates
+    existing_pairs = set()
+    if os.path.exists(csv_filename):
+        with open(csv_filename, 'r', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            next(reader, None) # skip header
+            for row in reader:
+                if len(row) >= 2:
+                    existing_pairs.add((row[0], row[1]))
 
     # Check if we should write headers
     write_header = not os.path.exists(csv_filename)
@@ -63,7 +74,9 @@ def get_auslastung():
         if write_header:
             writer.writerow(['timestamp', 'item_id', 'person_count', 'max_person_count', 'utilization_percentage'])
 
+        written_count = 0
         for item in data:
+
             org_id = str(item.get('organizationUnitId'))
             p_count = item.get('personCount')
             m_count = item.get('maxPersonCount')
@@ -86,9 +99,18 @@ def get_auslastung():
             if utilization > 150:
                 continue # another sanity check for extreme overflow
 
+
             item_id = f"{loc['name']}_{loc['type']}".replace(' ', '_').lower()
+
+            # Absolute deduplication check
+            if (timestamp, item_id) in existing_pairs:
+                continue
+
             writer.writerow([timestamp, item_id, p_count, m_count, utilization])
-    print(f"Successfully wrote {len(data)} records to {csv_filename}")
+            written_count += 1
+            existing_pairs.add((timestamp, item_id))
+    print(f"Successfully wrote {written_count} records to {csv_filename}")
+
 
 if __name__ == "__main__":
     get_auslastung()

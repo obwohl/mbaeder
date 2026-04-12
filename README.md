@@ -39,7 +39,7 @@ It provides a lean, long-format DataFrame with the two exact index columns requi
 2. `timestamp`: The timestamp of the observation, strictly aligned to 15-minute UTC boundaries.
 
 ### Future Forecasting for Free (via GitHub Actions)
-Because the `amazon/chronos-2` model is surprisingly small for a foundation model (only 120M parameters), **it can actually run completely free directly on a standard CPU GitHub Actions runner**!
+Because the `amazon/chronos-t5-small` model is surprisingly small for a foundation model (only 120M parameters), **it can actually run completely free directly on a standard CPU GitHub Actions runner**!
 
 This repository includes an on-demand forecasting workflow (`.github/workflows/forecast.yml`) which runs the included `example_forecast.py` script.
 

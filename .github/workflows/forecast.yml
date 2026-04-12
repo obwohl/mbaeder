@@ -1,6 +1,7 @@
 name: Run Chronos-2 Forecast
 
 on:
+  pull_request: # Automatically test workflow on Pull Requests before merging
   workflow_dispatch: # Allows manual triggering from the GitHub Actions UI
 
 jobs:
@@ -12,6 +13,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+      with:
+        ref: ${{ github.head_ref || github.ref_name }} # Checkout branch directly on PRs to allow pushing
 
     - name: Set up Python
       uses: actions/setup-python@v4
