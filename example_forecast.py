@@ -38,13 +38,21 @@ def run_local_forecast():
     # Predict the next 24 timesteps (24 * 15 minutes = 6 hours)
     # Target columns: person_count and utilization_percentage
     print("Forecasting the next 6 hours (24 intervals) for all locations simultaneously...")
-    pred_df = pipeline.predict_df(
-        df,
-        prediction_length=24,
-        id_column="item_id",
-        timestamp_column="timestamp",
-        target=["person_count", "utilization_percentage"]
-    )
+    try:
+        pred_df = pipeline.predict_df(
+            df,
+            prediction_length=24,
+            id_column="item_id",
+            timestamp_column="timestamp",
+            target=["person_count", "utilization_percentage"]
+        )
+    except ValueError as e:
+        if "Could not infer frequency" in str(e):
+            print(f"Skipping forecast: Not enough historical data to infer frequency ({e}).")
+            print("Please wait for more data to be collected.")
+            sys.exit(0)
+        else:
+            raise
 
     print("\nForecast completed! Saving to forecast_results.csv...")
     pred_df.to_csv("forecast_results.csv", index=False)
