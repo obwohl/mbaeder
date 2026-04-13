@@ -12,12 +12,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: ${{ github.head_ref || github.ref_name }} # Checkout branch directly on PRs to allow pushing
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -31,8 +31,12 @@ jobs:
 
     - name: Commit and push forecast results
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add forecast_results.csv
-        git commit -m "docs: generate new chronos-2 forecast" || echo "No new forecast to commit"
-        git push
+        if [ -f forecast_results.csv ]; then
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add forecast_results.csv
+          git commit -m "docs: generate new chronos-2 forecast" || echo "No new forecast to commit"
+          git push
+        else
+          echo "forecast_results.csv not found, skipping commit."
+        fi

@@ -3,7 +3,7 @@ name: Scrape SWM Auslastung
 on:
   pull_request: # Automatically test workflow on Pull Requests before merging
   schedule:
-    - cron: '*/30 * * * *' # Runs every 30 minutes
+    - cron: '14,44 * * * *' # Runs every 30 minutes (off-peak to avoid GitHub Actions delays)
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -11,15 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: ${{ github.head_ref || github.ref_name }} # Checkout branch directly on PRs to allow pushing
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
@@ -33,3 +34,6 @@ jobs:
         git add auslastung_live.csv
         git commit -m "chore: update auslastung_live.csv" || echo "No changes to commit"
         git push
+
+    - name: Keepalive Workflow
+      uses: liskin/gh-workflow-keepalive@v1
