@@ -3,7 +3,7 @@ name: Scrape SWM Auslastung
 on:
   pull_request: # Automatically test workflow on Pull Requests before merging
   schedule:
-    - cron: '*/30 * * * *' # Runs every 30 minutes
+    - cron: '14,44 * * * *' # Runs every 30 minutes (off-peak to avoid GitHub Actions delays)
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -33,3 +33,6 @@ jobs:
         git add auslastung_live.csv
         git commit -m "chore: update auslastung_live.csv" || echo "No changes to commit"
         git push
+
+    - name: Keepalive Workflow
+      uses: liskin/gh-workflow-keepalive@v1
