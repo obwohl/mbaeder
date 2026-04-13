@@ -47,8 +47,8 @@ def run_local_forecast():
             target=["person_count", "utilization_percentage"]
         )
     except ValueError as e:
-        if "Could not infer frequency" in str(e):
-            print(f"Skipping forecast: Not enough historical data to infer frequency ({e}).")
+        if "Could not infer frequency" in str(e) or "at least 3 data points" in str(e):
+            print(f"Skipping forecast: Not enough historical data ({e}).")
             print("Please wait for more data to be collected.")
             sys.exit(0)
         else:
