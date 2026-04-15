@@ -1,0 +1,5 @@
+Run 4
+API response status: 200
+API response body length: 936
+API response body snippet: [{"organizationUnitId":30195,"personCount":52,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+Successfully wrote 14 records to auslastung_live.csv

@@ -34,8 +34,17 @@ def get_auslastung():
     api_url = f"https://counter.ticos-systems.cloud/api/gates/counter?organizationUnitIds={ids_str}"
     req_api = urllib.request.Request(api_url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
     try:
-        api_response = urllib.request.urlopen(req_api).read().decode('utf-8')
+        response = urllib.request.urlopen(req_api)
+        print(f"API response status: {response.getcode()}")
+        api_response = response.read().decode('utf-8')
+        print(f"API response body length: {len(api_response)}")
+        print(f"API response body snippet: {api_response[:100]}...")
         data = json.loads(api_response)
+    except urllib.error.HTTPError as e:
+        print(f"HTTPError fetching API: {e.code} - {e.reason}")
+        print(f"Error headers: {e.headers}")
+        print(f"Error body: {e.read().decode('utf-8')}")
+        return
     except Exception as e:
         print(f"Error fetching API: {e}")
         return
@@ -44,14 +53,14 @@ def get_auslastung():
 
     # 3. Process and write to CSV
     now = datetime.now(timezone.utc)
-    # Round to the nearest 30-minute mark to handle slightly early or late cron executions
-    now_plus = now + timedelta(minutes=15)
-    discard = timedelta(minutes=now_plus.minute % 30,
-                        seconds=now_plus.second,
-                        microseconds=now_plus.microsecond)
-    now = now_plus - discard
+    # The cron job is scheduled at :14 and :44.
+    # To reliably map :14 to :00 and :44 to :30 even if delayed by GitHub Actions,
+    # we just check the current minute. If it's between 0 and 29, it belongs to :00.
+    # If it's between 30 and 59, it belongs to :30.
+    rounded_minute = 0 if now.minute < 30 else 30
 
-    timestamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    # We construct the timestamp explicitly to avoid any shifting bugs
+    timestamp = now.replace(minute=rounded_minute, second=0, microsecond=0).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 
