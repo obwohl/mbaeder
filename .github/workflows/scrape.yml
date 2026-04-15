@@ -3,7 +3,7 @@ name: Scrape SWM Auslastung
 on:
   pull_request: # Automatically test workflow on Pull Requests before merging
   schedule:
-    - cron: '14,44 * * * *' # Runs every 30 minutes (off-peak to avoid GitHub Actions delays)
+    - cron: '27,57 * * * *' # Runs every 30 minutes (off-peak to avoid GitHub Actions delays)
   workflow_dispatch: # Allows manual triggering
 
 jobs:
