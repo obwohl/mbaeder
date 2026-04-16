@@ -27,3 +27,17 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-04-16T07:00:00Z,nordbad_sauna,5,146,3.4
 2026-04-16T07:00:00Z,südbad_sauna,2,100,2.0
 2026-04-16T07:00:00Z,westbad_sauna,6,60,10.0
+2026-04-16T09:00:00Z,bad_giesing-harlaching_swim,62,311,19.9
+2026-04-16T09:00:00Z,cosimawellenbad_swim,61,530,11.5
+2026-04-16T09:00:00Z,michaelibad_swim,106,570,18.6
+2026-04-16T09:00:00Z,müller’sches_volksbad_swim,27,177,15.3
+2026-04-16T09:00:00Z,nordbad_swim,121,432,28.0
+2026-04-16T09:00:00Z,olympia-schwimmhalle_swim,107,959,11.2
+2026-04-16T09:00:00Z,südbad_swim,64,314,20.4
+2026-04-16T09:00:00Z,westbad_swim,88,872,10.1
+2026-04-16T09:00:00Z,cosimawellenbad_sauna,7,170,4.1
+2026-04-16T09:00:00Z,michaelibad_sauna,25,150,16.7
+2026-04-16T09:00:00Z,müller’sches_volksbad_sauna,12,70,17.1
+2026-04-16T09:00:00Z,nordbad_sauna,8,146,5.5
+2026-04-16T09:00:00Z,südbad_sauna,9,100,9.0
+2026-04-16T09:00:00Z,westbad_sauna,12,60,20.0
