@@ -3,7 +3,7 @@ name: Scrape SWM Auslastung
 on:
   pull_request: # Automatically test workflow on Pull Requests before merging
   schedule:
-    - cron: '27,57 * * * *' # Runs every 30 minutes (off-peak to avoid GitHub Actions delays)
+    - cron: '4,14,24,34,44,54 * * * *' # Runs every 10 minutes (6 times an hour) with an offset
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -24,15 +24,21 @@ jobs:
       with:
         python-version: '3.10'
 
+    - name: Install dependencies
+      run: pip install pandas
+
     - name: Run scraper script
       run: python swm_auslastung.py
+
+    - name: Process data into 30m grid
+      run: python process_auslastung.py
 
     - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add auslastung_live.csv
-        git commit -m "chore: update auslastung_live.csv" || echo "No changes to commit"
+        git add auslastung_raw.csv auslastung_live.csv
+        git commit -m "chore: update auslastung data" || echo "No changes to commit"
         git push
 
     - name: Keepalive Workflow
