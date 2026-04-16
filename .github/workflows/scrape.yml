@@ -3,7 +3,7 @@ name: Scrape SWM Auslastung
 on:
   pull_request: # Automatically test workflow on Pull Requests before merging
   schedule:
-    - cron: '4,14,24,34,44,54 * * * *' # Runs every 10 minutes (6 times an hour) with an offset
+    - cron: '7 * * * *' # Runs once an hour, using a sleep loop internally to fetch every 10 mins
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -28,7 +28,14 @@ jobs:
       run: pip install pandas
 
     - name: Run scraper script
-      run: python swm_auslastung.py
+      run: |
+        for i in {1..6}; do
+          echo "Run $i/6"
+          python swm_auslastung.py
+          if [ $i -lt 6 ]; then
+            sleep 600
+          fi
+        done
 
     - name: Process data into 30m grid
       run: python process_auslastung.py
