@@ -4,6 +4,10 @@ import csv
 import re
 from datetime import datetime, timezone, timedelta
 import os
+import logging
+import urllib.error
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def get_auslastung():
     # 1. Fetch HTML to find IDs and Names
@@ -12,7 +16,7 @@ def get_auslastung():
     try:
         html = urllib.request.urlopen(req_html).read().decode('utf-8')
     except Exception as e:
-        print(f"Error fetching HTML: {e}")
+        logging.error(f"Error fetching HTML: {e}")
         return
 
     # Extract location details using regex
@@ -34,24 +38,34 @@ def get_auslastung():
     api_url = f"https://counter.ticos-systems.cloud/api/gates/counter?organizationUnitIds={ids_str}"
     req_api = urllib.request.Request(api_url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
     try:
-        api_response = urllib.request.urlopen(req_api).read().decode('utf-8')
+        response = urllib.request.urlopen(req_api)
+        logging.info(f"API response status: {response.getcode()}")
+        api_response = response.read().decode('utf-8')
+        logging.info(f"API response body length: {len(api_response)}")
+        logging.info(f"API response body snippet: {api_response[:100]}...")
         data = json.loads(api_response)
+    except urllib.error.HTTPError as e:
+        logging.error(f"HTTPError fetching API: {e.code} - {e.reason}")
+        logging.error(f"Error headers: {e.headers}")
+        logging.error(f"Error body: {e.read().decode('utf-8')}")
+        return
     except Exception as e:
-        print(f"Error fetching API: {e}")
+        logging.error(f"Error fetching API: {e}")
         return
 
 
 
     # 3. Process and write to CSV
     now = datetime.now(timezone.utc)
-    # Round to the nearest 30-minute mark to handle slightly early or late cron executions
-    now_plus = now + timedelta(minutes=15)
-    discard = timedelta(minutes=now_plus.minute % 30,
-                        seconds=now_plus.second,
-                        microseconds=now_plus.microsecond)
-    now = now_plus - discard
+    # The cron job is scheduled at :27 and :57.
+    # To map :57 (or delayed to :05) to :00 and :27 (or delayed to :35) to :30,
+    # we shift the time forward by 10 minutes, and then floor to the nearest 30 mins.
+    # Example: 10:57 + 10m = 11:07 -> floors to 11:00
+    # Example: 10:27 + 10m = 10:37 -> floors to 10:30
+    shifted_time = now + timedelta(minutes=10)
+    rounded_minute = 0 if shifted_time.minute < 30 else 30
 
-    timestamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    timestamp = shifted_time.replace(minute=rounded_minute, second=0, microsecond=0).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
 
@@ -110,7 +124,7 @@ def get_auslastung():
             writer.writerow([timestamp, item_id, p_count, m_count, utilization])
             written_count += 1
             existing_pairs.add((timestamp, item_id))
-    print(f"Successfully wrote {written_count} records to {csv_filename}")
+    logging.info(f"Successfully wrote {written_count} records to {csv_filename}")
 
 
 if __name__ == "__main__":
