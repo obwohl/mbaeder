@@ -7,7 +7,15 @@ import os
 import logging
 import urllib.error
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# Setup logging to both console and a file
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler("scraper.log"),
+        logging.StreamHandler()
+    ]
+)
 
 def get_auslastung():
     # 1. Fetch HTML to find IDs and Names
