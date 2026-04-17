@@ -3,7 +3,7 @@ name: Scrape SWM Auslastung
 on:
   pull_request: # Automatically test workflow on Pull Requests before merging
   schedule:
-    - cron: '7 * * * *' # Runs once an hour, using a sleep loop internally to fetch every 10 mins
+    - cron: '7,37 * * * *' # Runs every 30 minutes
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -29,13 +29,8 @@ jobs:
 
     - name: Run scraper script
       run: |
-        for i in {1..6}; do
-          echo "Run $i/6"
-          python swm_auslastung.py
-          if [ $i -lt 6 ]; then
-            sleep 600
-          fi
-        done
+        echo "Action triggered at $(date -u)" >> execution.log
+        python swm_auslastung.py
 
     - name: Process data into 30m grid
       run: python process_auslastung.py
@@ -44,7 +39,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add auslastung_raw.csv auslastung_live.csv
+        git add auslastung_raw.csv auslastung_live.csv execution.log scraper.log
         git commit -m "chore: update auslastung data" || echo "No changes to commit"
         git push
 
