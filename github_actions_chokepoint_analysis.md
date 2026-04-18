@@ -25,3 +25,11 @@ Das Workflow-File definierte eigentlich den Start zur 7. Minute jeder Stunde. St
 - **Die Schleife entfernen:** Workflows sollten idealerweise so kurz wie möglich sein. Ein Run sollte die Python-Scripte aufrufen und sich direkt beenden.
 - **Zwei kurze Runs pro Stunde:** Wir ändern den Cron auf `7,37 * * * *`. Somit läuft der Runner ca. 10 Sekunden lang zur 7. und zur 37. Minute. Dies verringert die Blockade von GitHub Actions enorm, und die Queue wird zuverlässig abgearbeitet.
 - **Dauerhaftes Logging im Repo:** Damit wir solche stillschweigenden Ausfälle des Schedulers besser überwachen können, schreiben wir nun Logging-Daten mit Timestamps direkt in eine Datei (z.B. `execution.log` & `scraper.log`), die vom Workflow committet wird. Wenn GitHub Actions nicht rechtzeitig startet, können wir dies später exakt nachvollziehen.
+
+## Erkenntnis und Update zur Zuverlässigkeit von GitHub Cron
+Trotz der Entfernung der künstlichen Blockaden hat sich gezeigt, dass GitHubs interner `cron` Queue nach wie vor extrem unzuverlässig ist. Es fallen weiterhin Datenpunkte aus, manchmal fehlen Daten für 1.5 bis 2 Stunden komplett. Das bedeutet, dass wir die GitHub Action `schedule` Queue nicht nutzen können, wenn wir zuverlässige Daten im Halbstunden-Takt benötigen.
+
+### Empfohlene Lösung (Externes Triggering)
+Anstatt sich auf den internen GitHub-Scheduler zu verlassen, sollte die Ausführung der Action von **außen** (via GitHub API und `workflow_dispatch`) angetriggert werden.
+
+Dies kann durch einen kostenlosen Service wie [cron-job.org](https://cron-job.org/) erfolgen, der strikt und zuverlässig jede halbe Stunde einen HTTP POST Request absendet. Alternativ kann das Script auch komplett lokal über einen Cronjob ausgeführt werden. Eine genaue Anleitung dazu befindet sich in der Datei `alternative_scheduling_guide.md`.
