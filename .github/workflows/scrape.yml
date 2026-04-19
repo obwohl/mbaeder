@@ -3,7 +3,7 @@ name: Scrape SWM Auslastung
 on:
   pull_request: # Automatically test workflow on Pull Requests before merging
   schedule:
-    - cron: '7,37 * * * *' # Runs every 30 minutes
+    - cron: '17 * * * *' # Runs once per hour
   workflow_dispatch: # Allows manual triggering
 
 jobs:

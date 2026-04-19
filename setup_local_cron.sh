@@ -36,8 +36,8 @@ if grep -q "swm_auslastung.py" "$TMP_CRON"; then
     exit 0
 fi
 
-# Append the new cron job (runs at minute 7 and 37 of every hour)
-echo "7,37 * * * * $CRON_CMD >> $REPO_PATH/local_cron_execution.log 2>&1" >> "$TMP_CRON"
+# Append the new cron job (runs at minute 17 of every hour)
+echo "17 * * * * $CRON_CMD >> $REPO_PATH/local_cron_execution.log 2>&1" >> "$TMP_CRON"
 
 # Install the new crontab
 crontab "$TMP_CRON"
@@ -46,4 +46,4 @@ crontab "$TMP_CRON"
 rm "$TMP_CRON"
 
 echo "Successfully added crontab entry for $REPO_PATH."
-echo "The scraper will now run locally at minute 7 and 37 of every hour."
+echo "The scraper will now run locally at minute 17 of every hour."
