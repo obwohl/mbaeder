@@ -150,3 +150,7 @@
 2026-04-19 14:21:59,776 - INFO - API response body length: 943
 2026-04-19 14:21:59,776 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":117,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
 2026-04-19 14:21:59,777 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 15:10:32,786 - INFO - API response status: 200
+2026-04-19 15:10:32,787 - INFO - API response body length: 944
+2026-04-19 15:10:32,787 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":105,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-19 15:10:32,787 - INFO - Successfully wrote 14 records to auslastung_raw.csv
