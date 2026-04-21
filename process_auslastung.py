@@ -17,13 +17,13 @@ def process():
 
     df['timestamp'] = pd.to_datetime(df['timestamp'])
 
-    # We want half-hourly intervals.
-    # We find min and max timestamp, floor/ceil to 30 mins
-    min_time = df['timestamp'].min().floor('30min')
-    max_time = df['timestamp'].max().ceil('30min')
+    # We want hourly intervals.
+    # We find min and max timestamp, floor/ceil to 1 hour
+    min_time = df['timestamp'].min().floor('h')
+    max_time = df['timestamp'].max().ceil('h')
 
     # Generate target grid
-    target_times = pd.date_range(start=min_time, end=max_time, freq='30min')
+    target_times = pd.date_range(start=min_time, end=max_time, freq='h')
 
     output_rows = []
 
@@ -32,14 +32,14 @@ def process():
         group = group.sort_values('timestamp')
 
         for target in target_times:
-            # Find the closest observation within [-15m, +14m]
-            # Since timestamps might have seconds, we use [-15m, +15m) essentially.
+            # Find the closest observation within [-30m, +30m]
+            # Since timestamps might have seconds, we use [-30m, +30m) essentially.
             # We take the absolute difference to find the closest.
 
             diffs = (group['timestamp'] - target).dt.total_seconds()
 
-            # Filter valid ones: -15 mins (-900s) to < 15 mins (900s)
-            valid = group[(diffs >= -900) & (diffs < 900)]
+            # Filter valid ones: -30 mins (-1800s) to < 30 mins (1800s)
+            valid = group[(diffs >= -1800) & (diffs < 1800)]
 
             if not valid.empty:
                 # Find the one with minimum absolute difference
@@ -65,7 +65,7 @@ def process():
     out_df = out_df.sort_values(['timestamp', 'item_id'])
 
     out_df.to_csv(LIVE_FILE, index=False)
-    print(f"Processed {len(df)} raw rows into {len(out_df)} half-hourly rows.")
+    print(f"Processed {len(df)} raw rows into {len(out_df)} hourly rows.")
 
 if __name__ == '__main__':
     process()
