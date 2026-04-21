@@ -89,7 +89,194 @@
 2026-04-18 16:05:17,889 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":2,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
 2026-04-18 16:05:17,889 - INFO - Successfully wrote 14 records to auslastung_raw.csv
 2026-04-18 16:59:05,154 - ERROR - Error fetching HTML: <urlopen error [Errno 101] Network is unreachable>
-2026-04-19 23:32:38,692 - INFO - API response status: 200
-2026-04-19 23:32:38,692 - INFO - API response body length: 923
-2026-04-19 23:32:38,693 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":0,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
-2026-04-19 23:32:38,694 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-18 17:49:54,291 - INFO - API response status: 200
+2026-04-18 17:49:54,292 - INFO - API response body length: 940
+2026-04-18 17:49:54,292 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":2,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-18 17:49:54,293 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-18 19:04:58,719 - INFO - API response status: 200
+2026-04-18 19:04:58,720 - INFO - API response body length: 939
+2026-04-18 19:04:58,720 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":2,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-18 19:04:58,721 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-18 19:49:48,956 - INFO - API response status: 200
+2026-04-18 19:49:48,957 - INFO - API response body length: 938
+2026-04-18 19:49:48,957 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":2,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-18 19:49:48,958 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-18 20:50:21,395 - INFO - API response status: 200
+2026-04-18 20:50:21,397 - INFO - API response body length: 929
+2026-04-18 20:50:21,397 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":2,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-18 20:50:21,397 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-18 21:50:07,847 - ERROR - Error fetching HTML: <urlopen error [Errno 101] Network is unreachable>
+2026-04-18 22:50:10,602 - INFO - API response status: 200
+2026-04-18 22:50:10,603 - INFO - API response body length: 923
+2026-04-18 22:50:10,603 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":0,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-18 22:50:10,604 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-18 23:48:23,383 - INFO - API response status: 200
+2026-04-18 23:48:23,384 - INFO - API response body length: 923
+2026-04-18 23:48:23,385 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":0,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-18 23:48:23,385 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 03:46:00,275 - INFO - API response status: 200
+2026-04-19 03:46:00,276 - INFO - API response body length: 923
+2026-04-19 03:46:00,276 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":0,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-19 03:46:00,276 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 06:05:56,436 - INFO - API response status: 200
+2026-04-19 06:05:56,437 - INFO - API response body length: 931
+2026-04-19 06:05:56,437 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":16,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-19 06:05:56,437 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 07:44:12,999 - INFO - API response status: 200
+2026-04-19 07:44:13,000 - INFO - API response body length: 940
+2026-04-19 07:44:13,000 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":115,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-19 07:44:13,000 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 09:04:13,872 - INFO - API response status: 200
+2026-04-19 09:04:13,873 - INFO - API response body length: 943
+2026-04-19 09:04:13,873 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":194,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-19 09:04:13,873 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 09:58:25,488 - INFO - API response status: 200
+2026-04-19 09:58:25,489 - INFO - API response body length: 943
+2026-04-19 09:58:25,490 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":174,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-19 09:58:25,490 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 10:55:00,538 - INFO - API response status: 200
+2026-04-19 10:55:00,539 - INFO - API response body length: 943
+2026-04-19 10:55:00,539 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":127,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-19 10:55:00,539 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 11:47:11,463 - INFO - API response status: 200
+2026-04-19 11:47:11,464 - INFO - API response body length: 942
+2026-04-19 11:47:11,465 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":82,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-19 11:47:11,465 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 13:22:18,017 - INFO - API response status: 200
+2026-04-19 13:22:18,019 - INFO - API response body length: 943
+2026-04-19 13:22:18,019 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":104,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-19 13:22:18,019 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 14:21:59,775 - INFO - API response status: 200
+2026-04-19 14:21:59,776 - INFO - API response body length: 943
+2026-04-19 14:21:59,776 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":117,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-19 14:21:59,777 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 15:10:32,786 - INFO - API response status: 200
+2026-04-19 15:10:32,787 - INFO - API response body length: 944
+2026-04-19 15:10:32,787 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":105,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-19 15:10:32,787 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 16:05:35,304 - INFO - API response status: 200
+2026-04-19 16:05:35,305 - INFO - API response body length: 942
+2026-04-19 16:05:35,305 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":1,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-19 16:05:35,306 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 16:56:47,312 - INFO - API response status: 200
+2026-04-19 16:56:47,313 - INFO - API response body length: 942
+2026-04-19 16:56:47,314 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":1,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-19 16:56:47,314 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 17:49:15,458 - INFO - API response status: 200
+2026-04-19 17:49:15,459 - INFO - API response body length: 940
+2026-04-19 17:49:15,460 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":1,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-19 17:49:15,460 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 19:05:16,823 - INFO - API response status: 200
+2026-04-19 19:05:16,824 - INFO - API response body length: 939
+2026-04-19 19:05:16,825 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":1,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-19 19:05:16,825 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 19:50:15,180 - INFO - API response status: 200
+2026-04-19 19:50:15,181 - INFO - API response body length: 940
+2026-04-19 19:50:15,181 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":1,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-19 19:50:15,181 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 20:51:01,493 - INFO - API response status: 200
+2026-04-19 20:51:01,494 - INFO - API response body length: 934
+2026-04-19 20:51:01,494 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":1,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-19 20:51:01,494 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 21:48:53,388 - INFO - API response status: 200
+2026-04-19 21:48:53,390 - INFO - API response body length: 925
+2026-04-19 21:48:53,390 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":1,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-19 21:48:53,390 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 22:51:41,056 - INFO - API response status: 200
+2026-04-19 22:51:41,057 - INFO - API response body length: 923
+2026-04-19 22:51:41,057 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":0,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-19 22:51:41,057 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-19 23:49:40,775 - INFO - API response status: 200
+2026-04-19 23:49:40,777 - INFO - API response body length: 923
+2026-04-19 23:49:40,777 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":0,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-19 23:49:40,777 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 03:47:44,142 - INFO - API response status: 200
+2026-04-20 03:47:44,143 - INFO - API response body length: 923
+2026-04-20 03:47:44,144 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":0,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-20 03:47:44,144 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 06:25:13,558 - INFO - API response status: 200
+2026-04-20 06:25:13,559 - INFO - API response body length: 932
+2026-04-20 06:25:13,560 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":49,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-20 06:25:13,560 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 08:37:28,898 - INFO - API response status: 200
+2026-04-20 08:37:28,899 - INFO - API response body length: 938
+2026-04-20 08:37:28,899 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":82,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-20 08:37:28,900 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 10:56:40,603 - INFO - API response status: 200
+2026-04-20 10:56:40,604 - INFO - API response body length: 938
+2026-04-20 10:56:40,604 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":21,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-20 10:56:40,604 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 12:11:45,346 - INFO - API response status: 200
+2026-04-20 12:11:45,347 - INFO - API response body length: 937
+2026-04-20 12:11:45,348 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":34,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-20 12:11:45,348 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 14:22:10,039 - INFO - API response status: 200
+2026-04-20 14:22:10,040 - INFO - API response body length: 940
+2026-04-20 14:22:10,041 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":60,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-20 14:22:10,041 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 15:55:16,726 - INFO - API response status: 200
+2026-04-20 15:55:16,727 - INFO - API response body length: 941
+2026-04-20 15:55:16,727 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":47,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-20 15:55:16,728 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 17:16:57,537 - INFO - API response status: 200
+2026-04-20 17:16:57,538 - INFO - API response body length: 941
+2026-04-20 17:16:57,539 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":132,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-20 17:16:57,539 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 18:38:31,406 - INFO - API response status: 200
+2026-04-20 18:38:31,407 - INFO - API response body length: 939
+2026-04-20 18:38:31,407 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":33,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-20 18:38:31,408 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 20:05:14,848 - INFO - API response status: 200
+2026-04-20 20:05:14,849 - INFO - API response body length: 938
+2026-04-20 20:05:14,849 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":29,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-20 20:05:14,849 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 20:59:29,159 - INFO - API response status: 200
+2026-04-20 20:59:29,161 - INFO - API response body length: 927
+2026-04-20 20:59:29,161 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":5,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-20 20:59:29,161 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 21:57:42,629 - INFO - API response status: 200
+2026-04-20 21:57:42,630 - INFO - API response body length: 925
+2026-04-20 21:57:42,630 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":5,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-20 21:57:42,630 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 22:58:28,008 - INFO - API response status: 200
+2026-04-20 22:58:28,009 - INFO - API response body length: 924
+2026-04-20 22:58:28,009 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":5,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-20 22:58:28,010 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-20 23:57:24,761 - ERROR - Error fetching HTML: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 03:39:27,418 - INFO - API response status: 200
+2026-04-21 03:39:27,420 - INFO - API response body length: 923
+2026-04-21 03:39:27,420 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":0,"maxPersonCount":311},{"organizationUnitId":30190,"pers...
+2026-04-21 03:39:27,420 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-21 06:10:27,493 - INFO - API response status: 200
+2026-04-21 06:10:27,494 - INFO - API response body length: 932
+2026-04-21 06:10:27,494 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":41,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-21 06:10:27,494 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-21 08:22:19,629 - ERROR - Error fetching HTML: <urlopen error [Errno 101] Network is unreachable>
+2026-04-21 10:04:23,940 - INFO - API response status: 200
+2026-04-21 10:04:23,941 - INFO - API response body length: 941
+2026-04-21 10:04:23,941 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":64,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-21 10:04:23,942 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-21 11:21:05,640 - INFO - API response status: 200
+2026-04-21 11:21:05,641 - INFO - API response body length: 937
+2026-04-21 11:21:05,641 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":36,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-21 11:21:05,642 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-21 12:43:53,611 - INFO - API response status: 200
+2026-04-21 12:43:53,612 - INFO - API response body length: 936
+2026-04-21 12:43:53,613 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":45,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-21 12:43:53,613 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-21 14:52:39,911 - INFO - API response status: 200
+2026-04-21 14:52:39,913 - INFO - API response body length: 941
+2026-04-21 14:52:39,913 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":149,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-21 14:52:39,913 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-21 16:19:04,762 - INFO - API response status: 200
+2026-04-21 16:19:04,763 - INFO - API response body length: 942
+2026-04-21 16:19:04,764 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":151,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-04-21 16:19:04,764 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-21 17:37:09,751 - INFO - API response status: 200
+2026-04-21 17:37:09,752 - INFO - API response body length: 942
+2026-04-21 17:37:09,752 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":67,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-21 17:37:09,753 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-21 18:43:20,537 - INFO - API response status: 200
+2026-04-21 18:43:20,538 - INFO - API response body length: 941
+2026-04-21 18:43:20,539 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":30,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-04-21 18:43:20,539 - INFO - Successfully wrote 14 records to auslastung_raw.csv
