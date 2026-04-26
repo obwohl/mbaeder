@@ -271,3 +271,4 @@
 2026-04-26 11:06:16,614 - INFO - API response body length: 942
 2026-04-26 11:06:16,614 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":114,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
 2026-04-26 11:06:16,614 - INFO - Successfully wrote 14 records to auslastung_raw.csv
+2026-04-26 11:59:32,656 - ERROR - Error fetching HTML: <urlopen error [Errno 101] Network is unreachable>
