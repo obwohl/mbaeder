@@ -48,7 +48,7 @@ def get_auslastung():
     api_url = f"https://counter.ticos-systems.cloud/api/gates/counter?organizationUnitIds={ids_str}"
     req_api = urllib.request.Request(api_url, headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'})
     try:
-        response = urllib.request.urlopen(req_api)
+        response = urllib.request.urlopen(req_api, timeout=20)
         logging.info(f"API response status: {response.getcode()}")
         api_response = response.read().decode('utf-8')
         logging.info(f"API response body length: {len(api_response)}")
