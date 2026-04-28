@@ -18,28 +18,31 @@ logging.basicConfig(
 )
 
 def get_auslastung():
-    # 1. Fetch HTML to find IDs and Names
-    url_html = "https://www.swm.de/baeder/auslastung"
-    req_html = urllib.request.Request(url_html, headers={'User-Agent': 'Mozilla/5.0'})
-    try:
-        html = urllib.request.urlopen(req_html).read().decode('utf-8')
-    except Exception as e:
-        logging.error(f"Error fetching HTML: {e}")
-        return
 
-    # Extract location details using regex
-    blocks = re.split(r'<bath-capacity-item', html)[1:]
-    locations = {}
-    for block in blocks:
-        icon_match = re.search(r'icon-name="([^"]+)"', block)
-        name_match = re.search(r'bath-name="([^"]+)"', block)
-        id_match = re.search(r'organization-unit-id="([^"]+)"', block)
+    # Hardcoded locations to avoid missing baths not listed in HTML frontend
+    locations = {
+        '30195': {'name': 'Bad Giesing-Harlaching', 'type': 'swim'},
+        '30190': {'name': 'Cosimawellenbad', 'type': 'swim'},
+        '30197': {'name': 'Müller’sches Volksbad', 'type': 'swim'},
+        '30184': {'name': 'Nordbad', 'type': 'swim'},
+        '30182': {'name': 'Olympia-Schwimmhalle', 'type': 'swim'},
+        '30187': {'name': 'Südbad', 'type': 'swim'},
+        '30208': {'name': 'Michaelibad', 'type': 'swim'},
+        '30199': {'name': 'Westbad', 'type': 'swim'},
+        '30191': {'name': 'Cosimawellenbad', 'type': 'sauna'},
+        '30204': {'name': 'Müller’sches Volksbad', 'type': 'sauna'},
+        '30185': {'name': 'Nordbad', 'type': 'sauna'},
+        '30188': {'name': 'Südbad', 'type': 'sauna'},
+        '30200': {'name': 'Michaelibad', 'type': 'sauna'},
+        '30207': {'name': 'Westbad', 'type': 'sauna'},
+        '30181': {'name': 'Dante-Freibad', 'type': 'swim'},
+        '30192': {'name': 'Prinzregentenstadion', 'type': 'sauna'},
+        '30194': {'name': 'Dante-Freibad', 'type': 'sauna'},
+        '30203': {'name': 'Schyrenbad', 'type': 'swim'},
+        '30201': {'name': 'Ungererbad', 'type': 'swim'},
+        '30206': {'name': 'Prinzregentenstadion', 'type': 'swim'}
+    }
 
-        if icon_match and name_match and id_match:
-            b_type = icon_match.group(1)
-            b_name = name_match.group(1)
-            b_id = id_match.group(1)
-            locations[b_id] = {'name': b_name, 'type': b_type}
 
     # 2. Fetch live data from Ticos API
     ids_str = ",".join(locations.keys())
@@ -85,17 +88,15 @@ def get_auslastung():
             p_count = item.get('personCount')
             m_count = item.get('maxPersonCount')
 
-            # Sanity checks
-            if not isinstance(p_count, (int, float)) or p_count < 0:
-                continue
-            if not isinstance(m_count, (int, float)) or m_count <= 0:
-                continue
-
             loc = locations.get(org_id, {'name': 'Unknown', 'type': 'Unknown'})
             if loc['name'] == 'Unknown':
                 continue
 
-            utilization = round((p_count / m_count) * 100, 1)
+            # Calculate utilization, avoiding division by zero
+            if isinstance(m_count, (int, float)) and m_count > 0 and isinstance(p_count, (int, float)):
+                utilization = round((p_count / m_count) * 100, 1)
+            else:
+                utilization = 0.0
 
             item_id = f"{loc['name']}_{loc['type']}".replace(' ', '_').lower()
 
