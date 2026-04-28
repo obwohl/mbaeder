@@ -24,6 +24,8 @@ def process():
 
     # Generate target grid
     target_times = pd.date_range(start=min_time, end=max_time, freq='h')
+    # Precompute formatted strings for target times
+    target_str_map = {t: t.strftime('%Y-%m-%dT%H:%M:%SZ') for t in target_times}
 
     output_rows = []
 
@@ -47,7 +49,7 @@ def process():
                 closest_row = valid.loc[closest_idx]
 
                 # Format exactly as Z UTC
-                target_str = target.strftime('%Y-%m-%dT%H:%M:%SZ')
+                target_str = target_str_map[target]
 
                 output_rows.append({
                     'timestamp': target_str,
