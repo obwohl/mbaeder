@@ -27,7 +27,12 @@ jobs:
         pip install pandas "chronos-forecasting[extras]>=2.2"
 
     - name: Run Chronos-2 Forecast
-      run: python example_forecast.py
+      run: |
+        if [ -f auslastung_live.csv ]; then
+          python example_forecast.py
+        else
+          echo "auslastung_live.csv not found, skipping forecast."
+        fi
 
     - name: Commit and push forecast results
       run: |

@@ -1,0 +1,6 @@
+__pycache__/
+.pytest_cache/
+*.log
+auslastung_raw.csv
+auslastung_live.csv
+forecast_results.csv
