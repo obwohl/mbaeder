@@ -25,20 +25,13 @@ LOCATIONS = {
     '30184': {'name': 'Nordbad', 'type': 'swim'},
     '30182': {'name': 'Olympia-Schwimmhalle', 'type': 'swim'},
     '30187': {'name': 'Südbad', 'type': 'swim'},
-    '30208': {'name': 'Michaelibad', 'type': 'swim'},
-    '30199': {'name': 'Westbad', 'type': 'swim'},
+    '30233': {'name': 'Michaelibad', 'type': 'swim'},
+    '30246': {'name': 'Westbad', 'type': 'swim'},
     '30191': {'name': 'Cosimawellenbad', 'type': 'sauna'},
     '30204': {'name': 'Müller’sches Volksbad', 'type': 'sauna'},
     '30185': {'name': 'Nordbad', 'type': 'sauna'},
     '30188': {'name': 'Südbad', 'type': 'sauna'},
-    '30200': {'name': 'Michaelibad', 'type': 'sauna'},
-    '30207': {'name': 'Westbad', 'type': 'sauna'},
-    '30181': {'name': 'Dante-Freibad', 'type': 'swim'},
-    '30192': {'name': 'Prinzregentenstadion', 'type': 'sauna'},
-    '30194': {'name': 'Dante-Freibad', 'type': 'sauna'},
-    '30203': {'name': 'Schyrenbad', 'type': 'swim'},
-    '30201': {'name': 'Ungererbad', 'type': 'swim'},
-    '30206': {'name': 'Prinzregentenstadion', 'type': 'swim'}
+    '30181': {'name': 'Dante-Freibad', 'type': 'swim'}
 }
 
 def get_auslastung():
