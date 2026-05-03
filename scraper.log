@@ -166,7 +166,19 @@
 2026-05-03 12:22:12,771 - INFO - API response body length: 1340
 2026-05-03 12:22:12,771 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":121,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
 2026-05-03 12:22:12,773 - INFO - Successfully wrote 20 records to auslastung_raw.csv
-2026-05-03 12:46:08,304 - INFO - API response status: 200
-2026-05-03 12:46:08,305 - INFO - API response body length: 1349
-2026-05-03 12:46:08,305 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":115,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
-2026-05-03 12:46:08,305 - INFO - Successfully wrote 20 records to auslastung_raw.csv
+2026-05-03 12:59:15,385 - INFO - API response status: 200
+2026-05-03 12:59:15,386 - INFO - API response body length: 1268
+2026-05-03 12:59:15,387 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":114,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-05-03 12:59:15,388 - INFO - Successfully wrote 19 records to auslastung_raw.csv
+2026-05-03 13:05:04,563 - INFO - API response status: 200
+2026-05-03 13:05:04,565 - INFO - API response body length: 1268
+2026-05-03 13:05:04,565 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":123,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-05-03 13:05:04,567 - INFO - Successfully wrote 19 records to auslastung_raw.csv
+2026-05-03 13:06:59,385 - INFO - API response status: 200
+2026-05-03 13:06:59,385 - INFO - API response body length: 1268
+2026-05-03 13:06:59,386 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":126,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-05-03 13:06:59,386 - INFO - Successfully wrote 19 records to auslastung_raw.csv
+2026-05-03 13:08:21,988 - INFO - API response status: 200
+2026-05-03 13:08:21,989 - INFO - API response body length: 472
+2026-05-03 13:08:21,989 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":128,"maxPersonCount":311},{"organizationUnitId":30190,"pe...
+2026-05-03 13:08:21,989 - INFO - Successfully wrote 7 records to auslastung_raw.csv
