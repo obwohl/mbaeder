@@ -18,3 +18,7 @@
 2026-05-03 21:00:38,597 - INFO - API response body length: 400
 2026-05-03 21:00:38,597 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":12,"maxPersonCount":311},{"organizationUnitId":30190,"per...
 2026-05-03 21:00:38,598 - INFO - Successfully wrote 6 records to auslastung_raw.csv
+2026-05-03 22:00:37,024 - INFO - API response status: 200
+2026-05-03 22:00:37,025 - INFO - API response body length: 399
+2026-05-03 22:00:37,026 - INFO - API response body snippet: [{"organizationUnitId":30195,"personCount":12,"maxPersonCount":311},{"organizationUnitId":30190,"per...
+2026-05-03 22:00:37,026 - INFO - Successfully wrote 6 records to auslastung_raw.csv
