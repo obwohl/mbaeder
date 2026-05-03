@@ -41,7 +41,8 @@ jobs:
           git config --local user.name "GitHub Action"
           git add forecast_results.csv
           git commit -m "docs: generate new chronos-2 forecast" || echo "No new forecast to commit"
-          git push
+          git pull --rebase origin ${{ github.head_ref || github.ref_name }}
+          git push origin ${{ github.head_ref || github.ref_name }}
         else
           echo "forecast_results.csv not found, skipping commit."
         fi
