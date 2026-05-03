@@ -25,8 +25,7 @@ LOCATIONS = {
     '30197': {'name': 'Müller’sches Volksbad', 'type': 'swim'},
     '30184': {'name': 'Nordbad', 'type': 'swim'},
     '30187': {'name': 'Südbad', 'type': 'swim'},
-    '30208': {'name': 'Michaelibad', 'type': 'swim'},
-    '30199': {'name': 'Westbad', 'type': 'swim'}
+    '30182': {'name': 'Olympia-Schwimmhalle', 'type': 'swim'}
 }
 
 def get_auslastung():
