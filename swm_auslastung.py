@@ -33,12 +33,12 @@ LOCATIONS = {
     '30188': {'name': 'Südbad', 'type': 'sauna'},
     '30230': {'name': 'Michaelibad', 'type': 'sauna'},
     '30238': {'name': 'Westbad', 'type': 'sauna'},
-    '30181': {'name': 'Dante-Freibad', 'type': 'swim'},
+    '30268': {'name': 'Dante-Freibad', 'type': 'swim'},
     '30192': {'name': 'Prinzregentenstadion', 'type': 'sauna'},
     '30194': {'name': 'Dante-Freibad', 'type': 'sauna'},
-    '30203': {'name': 'Schyrenbad', 'type': 'swim'},
-    '30201': {'name': 'Ungererbad', 'type': 'swim'},
-    '30206': {'name': 'Prinzregentenstadion', 'type': 'swim'}
+    '30269': {'name': 'Schyrenbad', 'type': 'swim'},
+    '30223': {'name': 'Ungererbad', 'type': 'swim'},
+    '30177': {'name': 'Prinzregentenstadion', 'type': 'swim'}
 }
 
 def get_auslastung():

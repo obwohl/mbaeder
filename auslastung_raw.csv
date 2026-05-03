@@ -5,7 +5,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-01T20:00:38Z,nordbad_swim,111,432,25.7
 2026-05-01T20:00:38Z,olympia-schwimmhalle_swim,194,959,20.2
 2026-05-01T20:00:38Z,südbad_swim,16,314,5.1
-2026-05-01T20:00:38Z,michaelibad_swim,-2,880,0.0
+2026-05-01T20:00:38Z,michaelibad_swim,0,880,0.0
 2026-05-01T20:00:38Z,westbad_swim,247,1400,17.6
 2026-05-01T20:00:38Z,cosimawellenbad_sauna,24,170,14.1
 2026-05-01T20:00:38Z,müller’sches_volksbad_sauna,7,70,10.0
@@ -25,7 +25,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-01T21:00:37Z,nordbad_swim,52,432,12.0
 2026-05-01T21:00:37Z,olympia-schwimmhalle_swim,126,959,13.1
 2026-05-01T21:00:37Z,südbad_swim,6,314,1.9
-2026-05-01T21:00:37Z,michaelibad_swim,-2,880,0.0
+2026-05-01T21:00:37Z,michaelibad_swim,0,880,0.0
 2026-05-01T21:00:37Z,westbad_swim,26,1400,1.9
 2026-05-01T21:00:37Z,cosimawellenbad_sauna,2,170,1.2
 2026-05-01T21:00:37Z,müller’sches_volksbad_sauna,0,70,0.0
@@ -45,7 +45,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-01T22:00:40Z,nordbad_swim,38,432,8.8
 2026-05-01T22:00:40Z,olympia-schwimmhalle_swim,118,959,12.3
 2026-05-01T22:00:40Z,südbad_swim,6,314,1.9
-2026-05-01T22:00:40Z,michaelibad_swim,-2,880,0.0
+2026-05-01T22:00:40Z,michaelibad_swim,0,880,0.0
 2026-05-01T22:00:40Z,westbad_swim,8,1400,0.6
 2026-05-01T22:00:40Z,cosimawellenbad_sauna,0,170,0.0
 2026-05-01T22:00:40Z,müller’sches_volksbad_sauna,0,70,0.0
@@ -65,7 +65,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-01T23:00:38Z,nordbad_swim,0,432,0.0
 2026-05-01T23:00:38Z,olympia-schwimmhalle_swim,0,959,0.0
 2026-05-01T23:00:38Z,südbad_swim,0,314,0.0
-2026-05-01T23:00:38Z,michaelibad_swim,-2,880,0.0
+2026-05-01T23:00:38Z,michaelibad_swim,0,880,0.0
 2026-05-01T23:00:38Z,westbad_swim,8,1400,0.6
 2026-05-01T23:00:38Z,cosimawellenbad_sauna,0,170,0.0
 2026-05-01T23:00:38Z,müller’sches_volksbad_sauna,0,70,0.0
@@ -85,7 +85,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-02T00:00:40Z,nordbad_swim,0,432,0.0
 2026-05-02T00:00:40Z,olympia-schwimmhalle_swim,0,959,0.0
 2026-05-02T00:00:40Z,südbad_swim,0,314,0.0
-2026-05-02T00:00:40Z,michaelibad_swim,-2,880,0.0
+2026-05-02T00:00:40Z,michaelibad_swim,0,880,0.0
 2026-05-02T00:00:40Z,westbad_swim,8,1400,0.6
 2026-05-02T00:00:40Z,cosimawellenbad_sauna,0,170,0.0
 2026-05-02T00:00:40Z,müller’sches_volksbad_sauna,0,70,0.0
@@ -465,7 +465,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-02T19:00:38Z,nordbad_swim,134,432,31.0
 2026-05-02T19:00:38Z,olympia-schwimmhalle_swim,125,959,13.0
 2026-05-02T19:00:38Z,südbad_swim,53,314,16.9
-2026-05-02T19:00:38Z,michaelibad_swim,-4,880,0.0
+2026-05-02T19:00:38Z,michaelibad_swim,0,880,0.0
 2026-05-02T19:00:38Z,westbad_swim,569,1400,40.6
 2026-05-02T19:00:38Z,cosimawellenbad_sauna,18,170,10.6
 2026-05-02T19:00:38Z,müller’sches_volksbad_sauna,17,70,24.3
@@ -485,7 +485,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-02T20:00:37Z,nordbad_swim,93,432,21.5
 2026-05-02T20:00:37Z,olympia-schwimmhalle_swim,86,959,9.0
 2026-05-02T20:00:37Z,südbad_swim,33,314,10.5
-2026-05-02T20:00:37Z,michaelibad_swim,-4,880,0.0
+2026-05-02T20:00:37Z,michaelibad_swim,0,880,0.0
 2026-05-02T20:00:37Z,westbad_swim,348,1400,24.9
 2026-05-02T20:00:37Z,cosimawellenbad_sauna,14,170,8.2
 2026-05-02T20:00:37Z,müller’sches_volksbad_sauna,16,70,22.9
@@ -505,7 +505,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-02T21:00:36Z,nordbad_swim,40,432,9.3
 2026-05-02T21:00:36Z,olympia-schwimmhalle_swim,30,959,3.1
 2026-05-02T21:00:36Z,südbad_swim,6,314,1.9
-2026-05-02T21:00:36Z,michaelibad_swim,-4,880,0.0
+2026-05-02T21:00:36Z,michaelibad_swim,0,880,0.0
 2026-05-02T21:00:36Z,westbad_swim,30,1400,2.1
 2026-05-02T21:00:36Z,cosimawellenbad_sauna,0,170,0.0
 2026-05-02T21:00:36Z,müller’sches_volksbad_sauna,0,70,0.0
@@ -525,7 +525,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-02T22:00:38Z,nordbad_swim,40,432,9.3
 2026-05-02T22:00:38Z,olympia-schwimmhalle_swim,28,959,2.9
 2026-05-02T22:00:38Z,südbad_swim,6,314,1.9
-2026-05-02T22:00:38Z,michaelibad_swim,-4,880,0.0
+2026-05-02T22:00:38Z,michaelibad_swim,0,880,0.0
 2026-05-02T22:00:38Z,westbad_swim,10,1400,0.7
 2026-05-02T22:00:38Z,cosimawellenbad_sauna,0,170,0.0
 2026-05-02T22:00:38Z,müller’sches_volksbad_sauna,0,70,0.0
@@ -545,7 +545,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-02T23:00:35Z,nordbad_swim,0,432,0.0
 2026-05-02T23:00:35Z,olympia-schwimmhalle_swim,0,959,0.0
 2026-05-02T23:00:35Z,südbad_swim,0,314,0.0
-2026-05-02T23:00:35Z,michaelibad_swim,-4,880,0.0
+2026-05-02T23:00:35Z,michaelibad_swim,0,880,0.0
 2026-05-02T23:00:35Z,westbad_swim,10,1400,0.7
 2026-05-02T23:00:35Z,cosimawellenbad_sauna,0,170,0.0
 2026-05-02T23:00:35Z,müller’sches_volksbad_sauna,0,70,0.0
@@ -565,7 +565,7 @@ timestamp,item_id,person_count,max_person_count,utilization_percentage
 2026-05-03T00:00:40Z,nordbad_swim,0,432,0.0
 2026-05-03T00:00:40Z,olympia-schwimmhalle_swim,0,959,0.0
 2026-05-03T00:00:40Z,südbad_swim,0,314,0.0
-2026-05-03T00:00:40Z,michaelibad_swim,-4,880,0.0
+2026-05-03T00:00:40Z,michaelibad_swim,0,880,0.0
 2026-05-03T00:00:40Z,westbad_swim,10,1400,0.7
 2026-05-03T00:00:40Z,cosimawellenbad_sauna,0,170,0.0
 2026-05-03T00:00:40Z,müller’sches_volksbad_sauna,0,70,0.0

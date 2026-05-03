@@ -54,7 +54,7 @@ def process():
                 output_rows.append({
                     'timestamp': target_str,
                     'item_id': item_id,
-                    'person_count': closest_row['person_count'],
+                    'person_count': max(0, int(closest_row['person_count'])),
                     'max_person_count': closest_row['max_person_count'],
                     'utilization_percentage': closest_row['utilization_percentage']
                 })
